@@ -51,22 +51,42 @@ header {
 section {
   padding: 100px 5%;
 }
+
 .main {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url("40c7ae3d8247e6e915ae.png") center/cover no-repeat;
-  background-attachment: scroll;
+  background: url("40c7ae3d8247e6e915ae.png") center center/cover no-repeat;
+  background-attachment: fixed;
 }
+
+/* تعديل الخلفية لتناسب الشاشات الصغيرة */
+@media (max-width: 768px) {
+  .main {
+    background-attachment: scroll; /* إزالة الثبات في الموبايل لتحسين الأداء */
+    background-size: contain; /* تظهر الصورة كاملة */
+    background-position: center center;
+  }
+}
+
+@media (max-width: 600px) {
+  .main {
+    background-size: contain;
+    background-position: center center;
+  }
+}
+
 .content {
   text-align: center;
 }
+
 .main h2 {
   color: #f0f0f0;
   font-size: 1.4em;
   font-weight: 500;
 }
+
 .main h2 span {
   display: inline-block;
   margin: 10px 0;
@@ -74,12 +94,14 @@ section {
   font-size: 2em;
   font-weight: 600;
 }
+
 .main h3 {
   color: #f0f0f0;
   font-size: 2em;
   font-weight: 500;
   margin: 10px 0;
 }
+
 .btn {
   display: inline-block;
   margin: 10px 0 40px;
@@ -92,10 +114,13 @@ section {
   letter-spacing: 1px;
   border-radius: 15px;
   transition: 0.7s ease;
+  cursor: pointer;
 }
+
 .btn:hover {
   background-color: #0a49f6;
   transform: scale(1.1);
+  transition: transform 0.3s ease;
 }
 
 /* --- Email & Footer Text --- */
@@ -104,13 +129,16 @@ section {
   font-size: 16px;
   margin: 10px 0 20px;
 }
+
 .email a {
   color: #00aced;
   text-decoration: none;
 }
+
 .email a:hover {
   text-decoration: underline;
 }
+
 .footer-text {
   color: #fff;
   font-size: 14px;
@@ -125,6 +153,7 @@ section {
   margin: 5px;
   transition: transform 0.3s ease;
 }
+
 .socail-icon a:hover {
   color: #00aced;
   transform: rotate(20deg) scale(1.2);
@@ -162,18 +191,22 @@ img {
   margin: 10px;
   transition: 0.7s ease;
 }
+
 .card:hover {
   transform: scale(1.1);
 }
+
 .icon {
   text-align: center;
   color: #0a49f6;
   font-size: 8em;
   padding-bottom: 10px;
 }
+
 .info {
   text-align: center;
 }
+
 .info h3 {
   color: #0a49f6;
   font-size: 1.2em;
@@ -181,19 +214,22 @@ img {
   padding-bottom: 10px;
   margin: 18px;
 }
+
 .info p {
   padding-bottom: 10px;
   padding-left: 10px;
-  color: #000; /* نص أسود */
+  color: #000;
   border: 3px solid transparent;
 }
 
 .projects {
   background-color: #000016;
 }
+
 .projects .content {
   margin-top: 30px;
 }
+
 .projects-card {
   background-color: #fff;
   min-height: 14em;
@@ -202,24 +238,31 @@ img {
   margin: 20px;
   transition: 0.7s ease;
 }
+
 .projects-card:hover {
   transform: scale(1.1);
 }
-.projects-image:hover.projects-image img {
-  opacity: 90%;
+
+/* تصحيح قيمة opacity في hover الصورة */
+.projects-image:hover img {
+  opacity: 0.9;
 }
+
 .projects-image img {
   width: 100%;
 }
+
 .projects-info {
   padding: 0.4em;
 }
+
 .projects-category {
   font-size: 0.9em;
   color: #000;
   padding-right: 9em;
   padding-bottom: 0.1em;
 }
+
 .projects-title {
   display: flex;
   justify-content: space-between;
@@ -227,18 +270,22 @@ img {
   margin-top: 10px;
   text-transform: uppercase;
 }
+
 .more-details {
   text-decoration: none;
   color: #3a6cf4;
 }
+
 .more-details:hover {
   color: #601cfc;
 }
+
 .content {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
+
 .footer {
   background-color: #000016;
   color: #fff;
@@ -246,13 +293,16 @@ img {
   justify-content: space-between;
   padding: 2em;
 }
+
 .footer-title {
   font-size: 1.1em;
   font-weight: 600;
 }
+
 .footer-title span {
   color: #3a6cf4;
 }
+
 .footer .socail-icon a {
   font-size: 1.3em;
 }
@@ -281,6 +331,11 @@ img {
   .nvegation a {
     font-size: 1em;
     margin-left: 0;
+  }
+  .main {
+    background-size: contain;
+    background-position: center center;
+    background-attachment: scroll;
   }
   .main h2 {
     font-size: 1.2em;
